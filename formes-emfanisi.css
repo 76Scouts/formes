@@ -1,0 +1,38 @@
+/* formes.76.life — εμφάνιση. Χρώματα 76ου: μπλε #1D61AC, κίτρινο #F6DC26, λευκό. */
+:root { --mple: #1D61AC; --kitrino: #F6DC26; --keimeno: #1b2430; --gkri: #5b6675; --grammi: #d5dbe3; --kokkino: #b3261e; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--keimeno); background: #f3f5f8; line-height: 1.5; }
+header.f-kefali { background: var(--mple); color: #fff; padding: 14px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 4px solid var(--kitrino); }
+header.f-kefali .f-sima { width: 46px; height: 46px; border-radius: 50%; background: #fff; flex: none; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+header.f-kefali .f-sima img { width: 38px; height: 38px; object-fit: contain; }
+header.f-kefali h1 { font-size: 18px; margin: 0; font-weight: 600; }
+header.f-kefali small { display: block; font-weight: 400; opacity: .9; font-size: 13px; }
+main { max-width: 680px; margin: 0 auto; padding: 16px; }
+.f-karta { background: #fff; border: 1px solid var(--grammi); border-radius: 10px; padding: 20px; }
+h2 { font-size: 18px; margin: 14px 0 10px; color: var(--mple); }
+.f-mpara { height: 8px; background: #e6eaf0; border-radius: 4px; overflow: hidden; }
+.f-mpara span { display: block; height: 100%; background: var(--mple); }
+.f-selida { font-size: 13px; color: var(--gkri); margin-top: 6px; }
+.f-pedio { margin: 16px 0; }
+.f-pedio label, .f-pedio legend { font-weight: 600; display: block; margin-bottom: 6px; padding: 0; }
+.f-pedio input[type=text], .f-pedio input[type=email], .f-pedio input[type=tel], .f-pedio textarea { width: 100%; font: inherit; padding: 10px; border: 1px solid #9aa5b4; border-radius: 6px; background: #fff; }
+.f-pedio input:focus, .f-pedio textarea:focus, .f-pedio input[type=radio]:focus { outline: 3px solid rgba(29, 97, 172, .35); outline-offset: 1px; }
+fieldset { border: 0; margin: 0; padding: 0; }
+.f-opt { display: inline-flex; align-items: center; gap: 6px; margin: 4px 14px 4px 0; }
+.f-opt label { font-weight: 400; margin: 0; }
+.f-klimaka .f-opt { margin-right: 10px; }
+.f-akra { display: flex; justify-content: space-between; font-size: 13px; color: var(--gkri); margin-top: 2px; max-width: 320px; }
+.f-voithima { font-size: 13px; color: var(--gkri); margin-top: 4px; }
+.f-lathos { color: var(--kokkino); font-size: 13px; min-height: 0; }
+.f-exei-lathos input, .f-exei-lathos textarea { border-color: var(--kokkino); }
+.f-enimerosi { font-size: 13px; color: var(--gkri); border-top: 1px solid var(--grammi); padding-top: 12px; }
+.f-enimerosi a, .f-ypo a, .f-eisagogi a { color: var(--mple); text-decoration: underline; }
+.f-ist { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.f-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; }
+.f-nav button { font: inherit; font-weight: 600; padding: 11px 22px; border-radius: 6px; border: 1px solid var(--mple); cursor: pointer; }
+.f-epomeno { background: var(--mple); color: #fff; margin-left: auto; }
+.f-piso { background: #fff; color: var(--mple); }
+.f-nav button:disabled { opacity: .6; cursor: default; }
+.f-sfalma { background: #fdecea; border: 1px solid var(--kokkino); color: var(--kokkino); padding: 10px; border-radius: 6px; margin-top: 12px; }
+.f-efxaristo, .f-kleisti { font-size: 17px; padding: 24px 6px; text-align: center; }
+.f-ypo { max-width: 680px; margin: 0 auto; padding: 8px 16px 28px; font-size: 13px; color: var(--gkri); text-align: center; }
