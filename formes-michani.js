@@ -4,6 +4,9 @@
 (function () {
   'use strict';
   var F = window.FORMA, API = window.FORMES_API;
+  /* Η forms-submit εκτελείται ΠΑΝΤΑ στη Φρανκφούρτη, όπου η βάση των ανοιχτών (Δήλωση §9).
+     Χωρίς αυτό, από την Κύπρο εκτελείται στη Ζυρίχη (eu-central-2) — έλεγχος 22/11/2026. */
+  var PERIOXI = 'forceFunctionRegion=eu-central-1';
   var root = document.getElementById('forma');
   if (!F || !root) return;
   var sel = 0, times = {}, stelnei = false;
@@ -128,7 +131,7 @@
     var ap = {}, hp = document.getElementById('istoselida');
     F.selides.forEach(function (s) { s.pedia.forEach(function (p) {
       var v = String(times[p.key] == null ? '' : times[p.key]).trim(); if (v) ap[p.key] = v; }); });
-    fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' },
+    fetch(API + '?' + PERIOXI, { method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ forma: F.slug, apantiseis: ap, istoselida: hp ? hp.value : '' }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { s: r.status, j: j }; }); })
       .then(function (x) {
@@ -146,6 +149,6 @@
 
   zografise();
   /* Έκλεισε στο μεταξύ; Ρωτάμε τον σέρβερ (δεν στέλνεται κανένα στοιχείο). */
-  fetch(API + '?f=' + encodeURIComponent(F.slug)).then(function (r) { return r.json(); })
+  fetch(API + '?f=' + encodeURIComponent(F.slug) + '&' + PERIOXI).then(function (r) { return r.json(); })
     .then(function (j) { if (j && j.anoikti === false) kleisto(); }).catch(function () {});
 })();
