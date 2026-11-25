@@ -193,7 +193,7 @@ footer a{color:var(--prasino)}
 
   <footer>
     <p>76ο Σύστημα Προσκόπων Στροβόλου · Αγίας Μαρίνας 34, 2059 Στρόβολος</p>
-    <p>Για να δεσμεύσεις ένα δώρο ζητάμε ονοματεπώνυμο και κινητό, και αν θέλεις email και σημείωση. Τα χρησιμοποιούμε μόνο για να συνεννοηθούμε μαζί σου για την παράδοση του δώρου. Τα βλέπουν ο Αρχηγός Συστήματος και οι βαθμοφόροι που οργανώνουν τη δράση· φυλάσσονται στο μητρώο του Συστήματος και διαγράφονται 14 ημέρες μετά την παράδοση, το αργότερο στις 31 Δεκεμβρίου 2026. Για να προστατεύουμε τη σελίδα από κατάχρηση, κρατάμε για 48 ώρες ένα κωδικοποιημένο αποτύπωμα της σύνδεσής σου και του email σου — όχι τα ίδια. Στις ετικέτες δεν δημοσιεύουμε ποτέ στοιχεία παιδιών.
+    <p>Για να δεσμεύσεις ένα δώρο ζητάμε ονοματεπώνυμο, κινητό και email, και αν θέλεις μια σημείωση. Τα χρησιμοποιούμε μόνο για αυτή τη δράση: στο email σου στέλνουμε επιβεβαίωση με τον αριθμό της ετικέτας και τις οδηγίες παράδοσης, το πολύ δύο υπενθυμίσεις αν το δώρο δεν έχει φτάσει ακόμη, και ένα ευχαριστώ όταν φτάσει. Το κινητό το χρησιμοποιούμε μόνο αν χρειαστεί να συνεννοηθούμε για την παράδοση. Δεν σου στέλνουμε τίποτε άλλο και δεν κρατάμε τα στοιχεία σου για επόμενες δράσεις. Τα στοιχεία σου τα βλέπουν ο Αρχηγός Συστήματος και οι βαθμοφόροι που οργανώνουν τη δράση· φυλάσσονται στο μητρώο του Συστήματος και διαγράφονται 14 ημέρες μετά την παράδοση, το αργότερο στις 31 Δεκεμβρίου 2026. Το αρχείο αποστολής των email (παραλήπτης, θέμα, ώρα) το κρατάμε 90 ημέρες. Για να προστατεύουμε τη σελίδα από κατάχρηση, κρατάμε για 48 ώρες ένα κωδικοποιημένο αποτύπωμα της σύνδεσής σου και του email σου. Στις ετικέτες και στα email δεν υπάρχουν ποτέ στοιχεία παιδιών. Για διόρθωση ή ακύρωση γράψε μας στο as@76.life.
        Περισσότερα στο <a href="https://76.life/privacy/dilosi" target="_blank" rel="noopener">76.life/privacy/dilosi</a>.</p>
   </footer>
 </div>
@@ -212,20 +212,23 @@ footer a{color:var(--prasino)}
     <label for="f-tel">Κινητό τηλέφωνο</label>
     <input id="f-tel" type="tel" autocomplete="tel" required maxlength="30" placeholder="99123456">
 
-    <label for="f-email">Email <span style="font-weight:400;color:var(--sbhsto)">(προαιρετικό)</span></label>
-    <input id="f-email" type="email" autocomplete="email" maxlength="160">
+    <label for="f-email">Email <span style="font-weight:400;color:var(--sbhsto)">(εκεί σου στέλνουμε τον αριθμό της ετικέτας και τις οδηγίες)</span></label>
+    <input id="f-email" type="email" autocomplete="email" required maxlength="160">
+
+    <label for="f-email2">Email ξανά</label>
+    <input id="f-email2" type="email" autocomplete="off" required maxlength="160" onpaste="return false">
 
     <label for="f-shm">Σημείωση <span style="font-weight:400;color:var(--sbhsto)">(προαιρετικό)</span></label>
     <textarea id="f-shm" maxlength="300"></textarea>
     <p class="vohtheia">Παρακαλούμε μη γράφεις εδώ στοιχεία παιδιών ή υγείας.</p>
 
-    <p class="vohtheia" id="dlgEnim">Για να δεσμεύσεις ένα δώρο ζητάμε ονοματεπώνυμο και κινητό, και αν θέλεις email και σημείωση. Τα χρησιμοποιούμε μόνο για να συνεννοηθούμε μαζί σου για την παράδοση του δώρου. Τα βλέπουν ο Αρχηγός Συστήματος και οι βαθμοφόροι που οργανώνουν τη δράση· φυλάσσονται στο μητρώο του Συστήματος και διαγράφονται 14 ημέρες μετά την παράδοση, το αργότερο στις 31 Δεκεμβρίου 2026. Για να προστατεύουμε τη σελίδα από κατάχρηση, κρατάμε για 48 ώρες ένα κωδικοποιημένο αποτύπωμα της σύνδεσής σου και του email σου — όχι τα ίδια. Στις ετικέτες δεν δημοσιεύουμε ποτέ στοιχεία παιδιών. Περισσότερα στο <a href="https://76.life/privacy/dilosi" target="_blank" rel="noopener">76.life/privacy/dilosi</a>.</p>
+    <p class="vohtheia" id="dlgEnim">Για να δεσμεύσεις ένα δώρο ζητάμε ονοματεπώνυμο, κινητό και email, και αν θέλεις μια σημείωση. Τα χρησιμοποιούμε μόνο για αυτή τη δράση: στο email σου στέλνουμε επιβεβαίωση με τον αριθμό της ετικέτας και τις οδηγίες παράδοσης, το πολύ δύο υπενθυμίσεις αν το δώρο δεν έχει φτάσει ακόμη, και ένα ευχαριστώ όταν φτάσει. Το κινητό το χρησιμοποιούμε μόνο αν χρειαστεί να συνεννοηθούμε για την παράδοση. Δεν σου στέλνουμε τίποτε άλλο και δεν κρατάμε τα στοιχεία σου για επόμενες δράσεις. Τα στοιχεία σου τα βλέπουν ο Αρχηγός Συστήματος και οι βαθμοφόροι που οργανώνουν τη δράση· φυλάσσονται στο μητρώο του Συστήματος και διαγράφονται 14 ημέρες μετά την παράδοση, το αργότερο στις 31 Δεκεμβρίου 2026. Το αρχείο αποστολής των email (παραλήπτης, θέμα, ώρα) το κρατάμε 90 ημέρες. Για να προστατεύουμε τη σελίδα από κατάχρηση, κρατάμε για 48 ώρες ένα κωδικοποιημένο αποτύπωμα της σύνδεσής σου και του email σου. Στις ετικέτες και στα email δεν υπάρχουν ποτέ στοιχεία παιδιών. Για διόρθωση ή ακύρωση γράψε μας στο as@76.life. Περισσότερα στο <a href="https://76.life/privacy/dilosi" target="_blank" rel="noopener">76.life/privacy/dilosi</a>.</p>
 
     <div id="dlgLathos" class="lathos krufo"></div>
 
     <div class="koumpia">
       <button type="button" class="deytero" id="akyro">Άκυρο</button>
-      <button type="submit" class="prwto" id="ypovoli">Τη διεκδικώ</button>
+      <button type="submit" class="prwto" id="ypovoli">Τη δεσμεύω</button>
     </div>
   </form>
 </dialog>
@@ -333,8 +336,12 @@ footer a{color:var(--prasino)}
     var tel   = document.getElementById("f-tel").value.trim();
     if (onoma.length < 3) { deixeLathos(lathos, "Γράψε το ονοματεπώνυμό σου."); return; }
     if (!/^[0-9+\s()-]{8,30}$/.test(tel)) { deixeLathos(lathos, "Γράψε ένα έγκυρο τηλέφωνο."); return; }
+    var em  = document.getElementById("f-email").value.trim();
+    var em2 = document.getElementById("f-email2").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { deixeLathos(lathos, "Γράψε ένα έγκυρο email."); return; }
+    if (em.toLowerCase() !== em2.toLowerCase()) { deixeLathos(lathos, "Τα δύο email δεν είναι ίδια."); return; }
 
-    koumpi.disabled = true; koumpi.textContent = "Διεκδικώ…";
+    koumpi.disabled = true; koumpi.textContent = "Δεσμεύω…";
 
     fetch(API, {
       method:"POST", headers:{"Content-Type":"application/json"},
@@ -342,14 +349,14 @@ footer a{color:var(--prasino)}
         action:"claim", category: epilegmeni.category,
         qty: Number(document.getElementById("f-posa").value),
         name: onoma, phone: tel,
-        email: document.getElementById("f-email").value.trim(),
+        email: em, email2: em2, enim: "ENIM-dora2026 v2.0",
         note:  document.getElementById("f-shm").value.trim()
       })
     }).then(function(r){
       return r.json().then(function(d){ d = d || {}; d._st = r.status; return d; },
                            function(){ return { _st: r.status }; });
     }).then(function(d){
-      koumpi.disabled = false; koumpi.textContent = "Τη διεκδικώ";
+      koumpi.disabled = false; koumpi.textContent = "Τη δεσμεύω";
       if (d._st === 429 || d.error === "rate"){
         deixeLathos(lathos, "Πολλές προσπάθειες από αυτή τη σύνδεση — δοκίμασε ξανά σε λίγο ή επικοινώνησε μαζί μας.");
         return;
@@ -377,7 +384,7 @@ footer a{color:var(--prasino)}
       dlgOk.showModal();
       document.getElementById("frm").reset();
     }).catch(function(){
-      koumpi.disabled = false; koumpi.textContent = "Τη διεκδικώ";
+      koumpi.disabled = false; koumpi.textContent = "Τη δεσμεύω";
       deixeLathos(lathos, "Δεν υπήρξε σύνδεση. Δοκίμασε ξανά.");
     });
   });
