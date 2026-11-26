@@ -42,7 +42,7 @@ h1,h2,.serif{font-family:Georgia,"Times New Roman",serif}
 
 /* ---------- κεφαλίδα ---------- */
 header{position:relative;background:linear-gradient(170deg,var(--vathy),var(--prasino));
-  color:#fff;padding:16px 0 30px;overflow:hidden}
+  color:#fff;padding:16px 0 30px;overflow:hidden;position:relative}
 header::before{content:"";position:absolute;inset:0;opacity:.3;
   background-image:radial-gradient(circle,#fff 1px,transparent 1.4px);
   background-size:26px 26px}
@@ -128,6 +128,60 @@ footer{border-top:2px dotted var(--grammi);margin-top:38px;padding:20px 0 46px;
 footer a{color:var(--prasino)}
 .krufo{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#xioni{display:none}}
+
+/* ═══ v3 · στυλ αφίσας (26/11/2026, «76 – Communications») ═══════════════════════════════════════ */
+@font-face{font-family:"Comfortaa";font-weight:700;font-display:swap;src:url(fonts/comfortaa-greek-700-normal.woff2) format("woff2");unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:"Comfortaa";font-weight:700;font-display:swap;src:url(fonts/comfortaa-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Commissioner";font-weight:100 900;font-display:swap;src:url(fonts/commissioner-greek-wght-normal.woff2) format("woff2");unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:"Commissioner";font-weight:100 900;font-display:swap;src:url(fonts/commissioner-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--kokkino:#0E2F57;--kokkino-anoixto:#1D61AC;--kitrino:#F6DC26;--vathy-mple:#0E2F57}
+body,button,input,select,textarea{font-family:"Commissioner",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+h1{font-family:"Comfortaa","Commissioner",sans-serif;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+h2,.serif,.arith{font-family:"Commissioner",system-ui,sans-serif;font-weight:800}
+h2{color:var(--vathy-mple)}
+.moto{font-family:"Commissioner",sans-serif;font-weight:600;color:var(--kitrino)}
+.arithmoi span{font-family:"Commissioner",sans-serif;font-weight:800}
+.gyrlanta{height:26px;bottom:-6px;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2226%22 viewBox=%220 0 80 26%22%3E%3Cpath d=%22M0%2C4 Q20%2C16 40%2C4 T80%2C4%22 fill=%22none%22 stroke=%22%23B8975A%22 stroke-width=%223.2%22/%3E%3Cpath d=%22M0%2C4 Q20%2C16 40%2C4 T80%2C4%22 fill=%22none%22 stroke=%22%23E9D7A8%22 stroke-width=%221.8%22/%3E%3Cpath d=%22M20%2C10.2 v4%22 stroke=%22%23B8975A%22 stroke-width=%221.6%22/%3E%3Ccircle cx=%2220%22 cy=%2218%22 r=%224.6%22 fill=%22%23F6DC26%22 stroke=%22%230E2F57%22 stroke-opacity=%22.35%22/%3E%3Cpath d=%22M60%2C10.2 v4%22 stroke=%22%23B8975A%22 stroke-width=%221.6%22/%3E%3Ccircle cx=%2260%22 cy=%2218%22 r=%224.6%22 fill=%22%23ffffff%22 stroke=%22%230E2F57%22 stroke-opacity=%22.35%22/%3E%3C/svg%3E") repeat-x 0 0/80px 26px;clip-path:none}
+header{padding-bottom:36px;overflow:visible}
+header::before{overflow:hidden}
+.lathos{color:#b3261e}
+.prwto{background:#1D61AC;color:#fff}.prwto:hover{background:#174F8E}
+.tonos{color:var(--vathy-mple);background:rgba(246,220,38,.55);padding:0 .25em;border-radius:4px}
+.panel{background:radial-gradient(120% 80% at 50% 40%,#2A74C4,#1D61AC 60%,#174F8E);border:0;color:#fff;margin-top:26px;padding:18px 16px 12px;position:relative}
+.panel .metritis{justify-content:center;gap:10px;flex-wrap:nowrap;white-space:nowrap}
+.panel .arith{color:var(--kitrino);font-size:3rem;font-family:"Comfortaa","Commissioner",sans-serif}
+.panel .apo{font-size:1.4rem;font-weight:800;opacity:.92}
+.panel .lex{font-size:1rem;opacity:.95;line-height:1.2;white-space:nowrap}
+@media(max-width:420px){.panel .arith{font-size:2.3rem}.panel .apo{font-size:1.1rem}.panel .lex{font-size:.85rem}.panel .metritis{gap:6px}}
+.panel .bar{background:rgba(255,255,255,.18);border:0;height:8px;margin:10px auto 0;max-width:340px}
+.panel .bar i{background:var(--kitrino)}
+.panel svg#dentro{max-width:340px}
+.vimata{display:flex;gap:8px;align-items:stretch;margin:14px 0 4px;padding:0;list-style:none}
+.vimata li{flex:1;text-align:center;background:#eef4fb;border:1px solid var(--grammi);border-radius:12px;padding:12px 6px 10px;font-weight:700;font-size:.88rem;line-height:1.25;color:var(--vathy-mple)}
+.vimata li svg{display:block;margin:0 auto 6px}
+details.pws{margin-top:12px;border-top:1px solid var(--grammi);padding-top:10px}
+details.pws summary,details.idiot summary{cursor:pointer;font-weight:700;color:var(--prasino)}
+details.pws p{margin:.7em 0 0}
+.omades{display:grid;grid-template-columns:1fr;gap:6px 18px}
+@media(min-width:640px){.omades{grid-template-columns:1fr 1fr}}
+.omada h3{margin:14px 0 8px;font-size:1.05rem;font-weight:800;color:var(--vathy-mple);display:flex;align-items:center;gap:8px}
+.omada h3::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--kitrino);box-shadow:0 0 0 2px var(--prasino)}
+.omada .plegma-s{display:grid;gap:10px}
+button.kat{all:unset;cursor:pointer;box-sizing:border-box;display:flex;align-items:center;gap:12px;width:100%;background:var(--karta);border:2px solid var(--grammi);border-radius:12px;padding:12px 14px;transition:transform .15s,border-color .15s,box-shadow .15s}
+button.kat::before,button.kat::after{content:none}
+button.kat svg{flex:none}
+button.kat .keim{flex:1;min-width:0}
+button.kat .onoma{display:block;font-weight:700;font-size:1rem;line-height:1.25}
+button.kat .ilikia{display:block;font-size:.82rem;color:var(--sbhsto)}
+button.kat .xapi{flex:none;font-size:.8rem;font-weight:800;border-radius:99px;padding:3px 10px;background:var(--kitrino);color:#0E2F57}
+button.kat:hover:not([disabled]),button.kat:focus-visible{transform:translateY(-2px);border-color:var(--kitrino);box-shadow:0 0 0 3px rgba(246,220,38,.55),0 6px 16px rgba(29,97,172,.18)}
+button.kat[disabled]{cursor:not-allowed;background:#eef2f8;opacity:.8}
+button.kat[disabled] .xapi{background:#d5dbe3;color:#5b6675}
+button.kat[disabled] .onoma{color:var(--sbhsto)}
+.imerominia{display:inline-block;background:var(--kitrino);color:#0E2F57;font-weight:800;border-radius:10px;padding:8px 14px;margin:2px 0 6px}
+#koumpi-kratisis{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:5;border:0;border-radius:14px;padding:15px;font:800 1.05rem "Commissioner",sans-serif;background:var(--kitrino);color:#0E2F57;box-shadow:0 8px 24px rgba(14,47,87,.35);cursor:pointer}
+@media(max-width:719px){#koumpi-kratisis.fainetai{display:block}body{padding-bottom:76px}}
+.doro-kef{filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
 </style>
 </head>
 <body>
@@ -141,7 +195,7 @@ footer a{color:var(--prasino)}
       <div class="keim"><h1>Χριστουγεννιάτικα Δώρα 2026</h1>
       <p class="ypo">76ο Σύστημα Προσκόπων Στροβόλου</p>
       <p class="moto">Πάθος για το μέλλον</p></div>
-      <svg class="doro-kef" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="26" width="48" height="32" rx="3" fill="#c0392b" stroke="rgba(0,0,0,.25)"/><rect x="5" y="19" width="54" height="11" rx="3" fill="#d94a3a" stroke="rgba(0,0,0,.25)"/><rect x="28" y="19" width="8" height="39" fill="#F6DC26"/><path d="M32 19C26 6 14 8 18 15c2 4 10 4 14 4zM32 19c6-13 18-11 14-4-2 4-10 4-14 4z" fill="#F6DC26" stroke="rgba(0,0,0,.25)"/></svg>
+      <svg class="doro-kef" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="26" width="48" height="32" rx="3" fill="#F6DC26" stroke="#0E2F57" stroke-width="2"/><rect x="5" y="19" width="54" height="11" rx="3" fill="#F6DC26" stroke="#0E2F57" stroke-width="2"/><rect x="27.5" y="19" width="9" height="39" fill="#1D61AC" stroke="#0E2F57" stroke-width="1.6"/><path d="M32 19C26 5 13 7 18 15c2 4 10 4 14 4zM32 19c6-14 19-12 14-4-2 4-10 4-14 4z" fill="#1D61AC" stroke="#0E2F57" stroke-width="1.8"/></svg>
     </div>
   </div>
   <div class="gyrlanta"></div>
@@ -149,30 +203,31 @@ footer a{color:var(--prasino)}
 
 <div class="wrap">
 
-  <div class="karta">
-    <p style="margin-top:0">Φέτος μαζεύουμε χριστουγεννιάτικα δώρα για <strong>άπορα παιδιά δημοτικών σχολείων της περιοχής μας</strong>. Τα παραδίδουμε στα σχολεία και εκείνα τα δίνουν στα παιδιά.</p>
-    <p>Καλούμε <strong>όλους</strong> — γονείς, βαθμοφόρους, παλαιούς προσκόπους και φίλους του Συστήματος — να συμμετάσχουν σε αυτή την όμορφη προσπάθεια. Είναι <strong>μια καλή πράξη</strong> γι’ αυτά τα Χριστούγεννα — και χωράει ο καθένας. Συμμετέχεις κι εσύ;</p>
-    <p style="margin-bottom:0">Κάθε ετικέτα πιο κάτω είναι <strong>ένα παιδί</strong> και γράφει μόνο <strong>τάξη και φύλο</strong> — τίποτα που να ταυτοποιεί κάποιον. Δεν χρειάζεται να ξέρουμε ποιο ακριβώς παιδί θα πάρει το δώρο· αρκεί το δώρο να είναι κατάλληλο γι’ αυτό. Δεσμεύεις μια ετικέτα, φέρνεις το δώρο και η ετικέτα βγαίνει από το δέντρο.</p>
-  </div>
-
-  <div class="karta">
+  <div class="karta panel">
     <div class="metritis">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9e2a2b" stroke-width="1.8" aria-hidden="true">
-        <rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12"/>
-        <path d="M12 9S9.5 4.5 7 6s1 3 5 3zM12 9s2.5-4.5 5-3-1 3-5 3z"/>
-      </svg>
-      <div>
-        <span class="arith" id="m-eleuthera">·</span>
-        <span>ετικέτες περιμένουν ακόμη — από <span id="m-synolo">·</span></span>
-      </div>
+      <span class="arith" id="m-eleuthera">·</span>
+      <span class="apo">/ <span id="m-synolo">·</span></span>
+      <span class="lex">ετικέτες περιμένουν</span>
     </div>
-    <svg id="dentro" viewBox="0 0 300 250" role="img" aria-label="Χριστουγεννιάτικο δέντρο με τις ετικέτες που περιμένουν" style="display:block;width:100%;max-width:300px;margin:14px auto 0"></svg>
+    <svg id="dentro" viewBox="-4 -12 408 498" role="img" aria-label="Χριστουγεννιάτικο δέντρο με τις ετικέτες που περιμένουν" style="display:block;width:100%;max-width:340px;margin:12px auto 0"></svg>
+    <div class="bar" aria-hidden="true"><i id="m-bar"></i></div>
   </div>
 
-  <h2>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true">
-      <path d="M12 2l3.5 5h-7zM9 7l-4 6h14l-4-6zM6.5 13L3 20h18l-3.5-7zM11 20v2h2v-2"/>
-    </svg>
+  <div class="karta">
+    <p style="margin-top:0">Φέτος μαζεύουμε χριστουγεννιάτικα δώρα για <strong>άπορα παιδιά δημοτικών σχολείων της περιοχής μας</strong>. Συμμετέχεις κι εσύ;</p>
+    <ol class="vimata">
+      <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><path d="M3 3h9l9 9-9 9-9-9z"/><circle cx="8" cy="8" r="1.4"/></svg>Διάλεξε ετικέτα</li>
+      <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12M12 9S9.5 4.5 7 6s1 3 5 3zM12 9s2.5-4.5 5-3-1 3-5 3z"/></svg>Αγόρασε δώρο</li>
+      <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-8 9 8v10H3z"/><path d="M9 21v-6h6v6"/></svg>Φέρ’ το στην Εστία 76ου ΣΠΣ</li>
+    </ol>
+    <details class="pws"><summary>Πώς δουλεύει</summary>
+      <p>Καλούμε <strong>όλους</strong> — γονείς, βαθμοφόρους, παλαιούς προσκόπους και φίλους του Συστήματος — να συμμετάσχουν σε αυτή την όμορφη προσπάθεια. Είναι <strong>μια καλή πράξη</strong> γι’ αυτά τα Χριστούγεννα — και χωράει ο καθένας. Τα δώρα τα παραδίδουμε στα σχολεία και εκείνα τα δίνουν στα παιδιά.</p>
+      <p>Κάθε ετικέτα είναι <strong>ένα παιδί</strong> και γράφει μόνο <strong>τάξη και φύλο</strong> — τίποτα που να ταυτοποιεί κάποιον. Δεν χρειάζεται να ξέρουμε ποιο ακριβώς παιδί θα πάρει το δώρο· αρκεί το δώρο να είναι κατάλληλο γι’ αυτό. Δεσμεύεις μια ετικέτα, φέρνεις το δώρο και η ετικέτα βγαίνει από το δέντρο.</p>
+    </details>
+  </div>
+
+  <h2 id="kategories">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><path d="M3 3h9l9 9-9 9-9-9z"/><circle cx="8" cy="8" r="1.4"/></svg>
     Δέσμευσε μια ετικέτα
   </h2>
   <div id="plegma" class="plegma" aria-live="polite">
@@ -181,7 +236,7 @@ footer a{color:var(--prasino)}
   <div id="genikoLathos" class="lathos krufo"></div>
 
   <h2>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9e2a2b" stroke-width="1.8" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true">
       <rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12"/>
       <path d="M12 9S9.5 4.5 7 6s1 3 5 3zM12 9s2.5-4.5 5-3-1 3-5 3z"/>
     </svg>
@@ -204,16 +259,22 @@ footer a{color:var(--prasino)}
     Πότε και πού
   </h2>
   <div class="karta">
-    <p style="margin-top:0">Μαζεύουμε δώρα <span class="tonos">μέχρι και το Σάββατο 12 Δεκεμβρίου 2026</span>.</p>
-    <p style="margin-bottom:0">Τα φέρνεις στην <strong>Εστία του Συστήματος</strong>, στις συγκεντρώσεις και στις δράσεις μας.</p>
+    <p style="margin-top:0"><span class="imerominia">Έως και το Σάββατο 12 Δεκεμβρίου 2026</span></p>
+    <p style="margin-bottom:0">Τα φέρνεις στην <strong>Εστία 76ου ΣΠΣ · Αγίας Μαρίνας 34, Στρόβολος</strong> (<a href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%9C%CE%B1%CF%81%CE%AF%CE%BD%CE%B1%CF%82+34+%CE%A3%CF%84%CF%81%CF%8C%CE%B2%CE%BF%CE%BB%CE%BF%CF%82" target="_blank" rel="noopener">χάρτης</a>), στις συγκεντρώσεις και στις δράσεις μας.</p>
   </div>
 
   <footer>
     <p>76ο Σύστημα Προσκόπων Στροβόλου · Αγίας Μαρίνας 34, 2059 Στρόβολος</p>
-    <p>Για να δεσμεύσεις ένα δώρο ζητάμε ονοματεπώνυμο, κινητό και email, και αν θέλεις μια σημείωση. Τα χρησιμοποιούμε μόνο για αυτή τη δράση: στο email σου στέλνουμε επιβεβαίωση με τον αριθμό της ετικέτας και τις οδηγίες παράδοσης, το πολύ δύο υπενθυμίσεις αν το δώρο δεν έχει φτάσει ακόμη, και ένα ευχαριστώ όταν φτάσει. Το κινητό το χρησιμοποιούμε μόνο αν χρειαστεί να συνεννοηθούμε για την παράδοση. Δεν σου στέλνουμε τίποτε άλλο και δεν κρατάμε τα στοιχεία σου για επόμενες δράσεις. Τα στοιχεία σου τα βλέπουν ο Αρχηγός Συστήματος και οι βαθμοφόροι που οργανώνουν τη δράση· φυλάσσονται στο μητρώο του Συστήματος και διαγράφονται 14 ημέρες μετά την παράδοση, το αργότερο στις 31 Δεκεμβρίου 2026. Το αρχείο αποστολής των email (παραλήπτης, θέμα, ώρα) το κρατάμε 90 ημέρες. Για να προστατεύουμε τη σελίδα από κατάχρηση, κρατάμε για 48 ώρες ένα κωδικοποιημένο αποτύπωμα της σύνδεσής σου και του email σου. Στις ετικέτες και στα email δεν υπάρχουν ποτέ στοιχεία παιδιών. Για διόρθωση ή ακύρωση γράψε μας στο as@76.life.
+    <p><strong>Πώς χρησιμοποιούμε τα στοιχεία σου.</strong> Για να δεσμεύσεις ένα δώρο ζητάμε ονοματεπώνυμο, κινητό και email, και αν θέλεις μια σημείωση.</p>
+    <details class="idiot"><summary>Διάβασε ολόκληρο το κείμενο</summary>
+    <p>Τα χρησιμοποιούμε μόνο για αυτή τη δράση: στο email σου στέλνουμε επιβεβαίωση με τον αριθμό της ετικέτας και τις οδηγίες παράδοσης, το πολύ δύο υπενθυμίσεις αν το δώρο δεν έχει φτάσει ακόμη, και ένα ευχαριστώ όταν φτάσει. Το κινητό το χρησιμοποιούμε μόνο αν χρειαστεί να συνεννοηθούμε για την παράδοση. Δεν σου στέλνουμε τίποτε άλλο και δεν κρατάμε τα στοιχεία σου για επόμενες δράσεις. Τα στοιχεία σου τα βλέπουν ο Αρχηγός Συστήματος και οι βαθμοφόροι που οργανώνουν τη δράση· φυλάσσονται στο μητρώο του Συστήματος και διαγράφονται 14 ημέρες μετά την παράδοση, το αργότερο στις 31 Δεκεμβρίου 2026. Το αρχείο αποστολής των email (παραλήπτης, θέμα, ώρα) το κρατάμε 90 ημέρες. Για να προστατεύουμε τη σελίδα από κατάχρηση, κρατάμε για 48 ώρες ένα κωδικοποιημένο αποτύπωμα της σύνδεσής σου και του email σου. Στις ετικέτες και στα email δεν υπάρχουν ποτέ στοιχεία παιδιών. Για διόρθωση ή ακύρωση γράψε μας στο as@76.life.
        Περισσότερα στο <a href="https://76.life/privacy/dilosi" target="_blank" rel="noopener">76.life/privacy/dilosi</a>.</p>
+  
+    </details>
   </footer>
 </div>
+
+<button type="button" id="koumpi-kratisis" aria-label="Δέσμευσε ετικέτα">Δέσμευσε ετικέτα</button>
 
 <dialog id="dlg">
   <form class="dlg" id="frm" method="dialog">
@@ -263,6 +324,55 @@ footer a{color:var(--prasino)}
 </dialog>
 
 <script>
+/* 76ο ΣΠ Στροβόλου — Δέντρο Δώρων 2026 (στυλ αφίσας)
+ * Αντικαθιστά τη zwgrafiseDentro(el, sy) της σελίδας dora2026. Ίδια υπογραφή, ίδια λογική:
+ *   sy = σύνολο ετικετών, el = ελεύθερες. Κάθε ετικέτα έχει σταθερή θέση· όσο δεσμεύονται,
+ *   φεύγουν «από παντού» με σταθερή σειρά (όπως σήμερα) και κάτω από το δέντρο μαζεύονται δώρα.
+ * Χρειάζεται: <svg id="dentro" viewBox="-4 -12 408 498"> σε μπλε φόντο (#1D61AC). Καμία αλλαγή σε δεδομένα.
+ */
+(function (w) {
+  var BASE = "<rect x=\"184\" y=\"440\" width=\"32\" height=\"34\" rx=\"4\" fill=\"#B8975A\" stroke=\"#0E2F57\" stroke-width=\"2\"/><polygon points=\"200,280 26,444 374,444\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"20\" stroke-linejoin=\"round\"/><polygon points=\"200,286 200,444 370,444\" fill=\"#DCE8F6\" opacity=\".75\"/><polygon points=\"200,194 58,354 342,354\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"20\" stroke-linejoin=\"round\"/><polygon points=\"200,200 200,354 338,354\" fill=\"#DCE8F6\" opacity=\".75\"/><polygon points=\"200,114 92,252 308,252\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"20\" stroke-linejoin=\"round\"/><polygon points=\"200,120 200,252 304,252\" fill=\"#DCE8F6\" opacity=\".75\"/><polygon points=\"200,56 128,152 272,152\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"20\" stroke-linejoin=\"round\"/><polygon points=\"200,62 200,152 268,152\" fill=\"#DCE8F6\" opacity=\".75\"/><path d=\"M140,134 Q200,166 262,128\" fill=\"none\" stroke=\"#B8975A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M140,134 Q200,166 262,128\" fill=\"none\" stroke=\"#E9D7A8\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-dasharray=\"3 4\"/><path d=\"M104,228 Q200,268 300,222\" fill=\"none\" stroke=\"#B8975A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M104,228 Q200,268 300,222\" fill=\"none\" stroke=\"#E9D7A8\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-dasharray=\"3 4\"/><path d=\"M70,328 Q200,376 334,322\" fill=\"none\" stroke=\"#B8975A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M70,328 Q200,376 334,322\" fill=\"none\" stroke=\"#E9D7A8\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-dasharray=\"3 4\"/><path d=\"M38,420 Q200,472 362,414\" fill=\"none\" stroke=\"#B8975A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M38,420 Q200,472 362,414\" fill=\"none\" stroke=\"#E9D7A8\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-dasharray=\"3 4\"/><ellipse cx=\"200\" cy=\"478\" rx=\"196\" ry=\"6\" fill=\"#0E2F57\" opacity=\".22\"/>", TOP = "<polygon points=\"200.0,-8.0 214.1,16.6 241.8,22.4 222.8,43.4 225.9,71.6 200.0,60.0 174.1,71.6 177.2,43.4 158.2,22.4 185.9,16.6\" fill=\"#F6DC26\" stroke=\"#0E2F57\" stroke-width=\"2\" stroke-linejoin=\"round\"/><circle cx=\"200\" cy=\"38\" r=\"17.5\" fill=\"#fff\"/><path d=\"M287.0,574.9C259.1,559.7 234.2,535.5 221.9,511.8L219.0,506.1L224.5,497.6C236.0,480.0 246.7,453.5 250.6,433.2C252.3,424.4 252.4,424.1 254.9,424.5C256.3,424.8 264.5,425.2 273.1,425.6L288.6,426.2L289.9,457.3C291.0,486.9 292.6,505.0 294.9,515.0C296.1,520.1 296.4,579.0 295.2,579.0C294.8,579.0 291.1,577.1 287.0,574.9ZM339.5,577.1C336.0,575.5 334.2,572.7 325.6,554.9C311.1,524.7 305.9,508.2 304.0,486.3C300.0,441.0 305.7,412.1 326.8,370.6C342.1,340.3 358.4,318.4 376.6,303.1C413.4,272.3 459.8,253.7 521.2,245.1C544.2,241.8 540.0,239.0 554.3,267.8C568.9,297.2 590.0,342.2 590.0,343.8C590.0,344.5 589.5,345.0 589.0,345.0C588.4,345.0 576.6,349.5 562.6,355.0C548.7,360.5 536.9,365.0 536.4,365.0C535.8,365.0 530.9,355.7 525.5,344.2C520.1,332.8 509.7,310.8 502.2,295.3L488.8,267.1L481.7,270.6C450.7,286.2 422.3,311.8 399.5,344.5C392.7,354.3 378.0,378.6 378.0,380.2C378.0,381.4 397.0,381.2 449.0,379.4C474.6,378.6 498.9,378.0 503.0,378.2L510.5,378.5L514.2,386.0C523.6,405.0 528.4,425.4 528.4,446.0C528.5,468.4 524.7,484.3 514.9,502.9C493.0,544.7 455.8,568.0 398.6,575.5C384.8,577.3 342.5,578.5 339.5,577.1ZM414.6,556.5C433.7,547.8 450.5,531.9 459.5,514.0C471.7,489.7 473.3,458.9 463.9,430.5C460.4,419.9 453.4,405.5 448.4,398.6L444.8,393.8L415.7,394.4C399.6,394.8 382.8,395.3 378.4,395.6L370.3,396.2L367.6,404.8C362.8,420.7 361.6,429.8 361.6,451.5C361.5,468.3 361.9,473.3 363.8,482.7C369.2,509.5 381.2,534.8 398.0,554.8C403.9,561.9 403.1,561.8 414.6,556.5ZM166.0,503.2C148.2,497.3 133.6,479.4 130.7,459.9L130.2,456.3L136.8,458.6C165.0,468.4 191.7,453.3 199.1,423.2L200.4,417.8L204.5,418.5C218.1,420.7 235.0,423.0 237.9,423.0L241.2,423.0L240.5,427.6C238.4,441.7 231.4,460.7 223.3,474.3C216.9,485.1 204.5,497.7 196.5,501.6C191.3,504.1 189.2,504.5 181.0,504.7C174.0,504.9 170.0,504.5 166.0,503.2ZM277.0,413.3C240.4,412.3 206.0,407.5 188.8,401.0C183.5,399.1 178.0,394.3 178.0,391.8C178.0,389.7 183.8,385.2 189.5,383.1C206.4,376.7 248.6,371.0 279.2,371.0L289.0,371.0L289.0,376.5L289.0,382.0L280.2,382.0C246.7,382.0 193.0,388.2 193.0,392.0C193.0,395.7 229.1,400.2 269.2,401.6L289.0,402.3L289.0,408.2C289.0,412.3 288.6,413.9 287.8,413.8C287.1,413.7 282.2,413.5 277.0,413.3ZM80.7,370.9C37.0,365.0 4.8,318.5 11.0,270.0C13.9,247.1 24.3,226.4 41.1,210.4C49.2,202.7 55.1,198.8 65.4,193.9C84.5,185.0 107.8,183.1 129.5,188.6C137.4,190.6 152.2,197.7 161.2,203.7C170.5,209.8 187.9,227.0 195.9,238.0C213.3,261.7 228.1,294.3 235.4,324.5C238.1,336.2 241.0,353.4 241.0,358.6L241.0,361.6L228.6,362.8C221.7,363.5 212.4,364.7 207.8,365.5C196.4,367.5 196.3,367.5 195.5,363.8C194.1,357.6 188.1,343.8 183.3,336.1C167.8,311.3 144.3,302.2 122.4,312.6C105.2,320.7 95.0,341.6 98.0,362.8C98.6,366.9 98.9,370.4 98.8,370.6C97.8,371.5 86.4,371.7 80.7,370.9ZM252.6,358.9C252.4,358.1 251.9,354.6 251.5,351.0C249.2,327.2 240.8,300.2 224.3,263.5C195.6,199.7 191.5,187.4 190.3,161.4C189.2,136.4 194.8,114.6 208.4,91.6C218.6,74.3 231.6,60.3 251.0,45.4C264.9,34.8 277.0,24.6 287.9,14.4L296.0,6.8L296.0,47.2C296.0,70.7 295.4,97.5 294.6,111.5C291.2,167.6 289.3,225.2 288.4,301.1L287.7,357.8L283.1,358.3C280.6,358.7 272.8,359.2 265.8,359.6C255.4,360.1 253.0,360.0 252.6,358.9ZM301.4,321.3C301.4,314.8 301.2,300.6 300.9,289.8L300.5,270.2L305.9,259.8C320.0,232.6 334.8,210.7 358.2,182.6C385.2,150.4 395.1,140.6 429.4,112.2C456.3,89.9 467.0,80.7 466.6,80.3C466.4,80.1 444.7,76.7 418.4,72.8C372.9,66.0 369.6,65.7 352.0,65.6C335.1,65.5 332.9,65.7 327.1,67.8C323.6,69.1 318.4,71.6 315.6,73.4C312.8,75.2 309.9,77.0 309.2,77.4C308.3,78.0 308.0,70.8 308.0,42.7L308.0,7.3L324.7,10.6C333.9,12.4 354.3,15.7 370.0,17.9C423.3,25.5 520.9,39.0 521.8,39.0C522.9,39.0 521.6,50.0 520.1,52.8C519.5,53.9 513.9,59.1 507.7,64.3C474.2,92.4 448.2,119.5 429.3,146.0C413.9,167.6 391.3,208.1 380.0,234.5C372.9,251.0 362.8,281.6 359.0,298.5C355.0,315.8 354.8,316.5 350.2,321.7L346.5,325.9L325.8,329.5C314.4,331.4 304.3,333.0 303.3,333.0C301.7,333.0 301.5,331.8 301.4,321.3ZM80.0,285.0C85.6,273.9 85.0,274.2 95.6,276.0C110.1,278.5 109.6,279.2 100.2,269.7L91.8,261.3L96.9,251.2C99.7,245.6 102.0,240.8 102.0,240.5C102.0,240.2 97.3,242.4 91.5,245.2L81.0,250.5L72.5,242.0C67.8,237.3 64.0,233.8 64.0,234.0C64.0,234.3 64.9,239.6 66.0,245.9C67.1,252.2 67.9,257.5 67.7,257.6C67.6,257.7 62.8,260.2 57.0,263.1C50.2,266.5 47.2,268.5 48.3,268.8C49.3,269.0 54.7,269.9 60.3,270.8L70.4,272.5L71.7,280.5C73.8,293.7 74.1,295.0 74.5,295.0C74.8,295.0 77.2,290.5 80.0,285.0Z\" fill=\"#1D61AC\" fill-rule=\"evenodd\" transform=\"translate(187.00,24.28) scale(0.0470)\"/>", SLOTS = [[166.0, 94], [234.0, 100], [140.0, 138], [180.0, 144], [220.0, 138], [260.0, 144], [132.0, 184], [166.0, 190], [200.0, 184], [234.0, 190], [268.0, 184], [100.0, 228], [140.0, 234], [180.0, 228], [220.0, 234], [260.0, 228], [300.0, 234], [96.0, 272], [130.7, 278], [165.3, 272], [200.0, 278], [234.7, 272], [269.3, 278], [304.0, 272], [72.0, 316], [108.6, 322], [145.1, 316], [181.7, 322], [218.3, 316], [254.9, 322], [291.4, 316], [328.0, 322], [92.0, 360], [122.9, 366], [153.7, 360], [184.6, 366], [215.4, 360], [246.3, 366], [277.1, 360], [308.0, 366], [62.0, 400], [131.0, 406], [200.0, 400], [269.0, 406], [338.0, 400]];
+  var Y = "#F6DC26", B = "#1D61AC", N = "#0E2F57", R2 = "#B8975A";
+  function slots(sy) {                       // 45 σταθερές θέσεις· αν οι ετικέτες γίνουν περισσότερες, δεύτερη στρώση
+    var s = SLOTS.slice(0, sy), i = 0;
+    while (s.length < sy) { var p = SLOTS[i++ % SLOTS.length]; s.push([p[0] + 14, p[1] + 22]); }
+    return s;
+  }
+  function tag(x, y, j) {
+    var rot = ((j * 37) % 25) - 12, f = j % 2 ? B : Y, k = j % 2 ? "#fff" : N;
+    return '<g class="etiketa" transform="translate(' + x + ' ' + y + ') rotate(' + rot + ') scale(.6)">'
+      + '<path d="M0,0 L0,22" stroke="' + R2 + '" stroke-width="2.4"/>'
+      + '<path d="M-17,31 L-9,22 L9,22 L17,31 L17,60 Q17,64 13,64 L-13,64 Q-17,64 -17,60 Z" fill="' + f + '" stroke="' + N + '" stroke-width="2"/>'
+      + '<circle cx="0" cy="29" r="3.2" fill="#fff" stroke="' + N + '" stroke-width="1.6"/>'
+      + '<path d="M-8,42 H8 M-8,50 H8" stroke="' + k + '" stroke-width="2.6" stroke-linecap="round" opacity=".7"/></g>';
+  }
+  function gift(x, y, s, j) {
+    var box = [Y, "#fff", B][j % 3], rib = j % 3 === 2 ? Y : (j % 3 === 1 ? Y : B), w2 = 40 * s, h2 = 28 * s;
+    return '<g class="doro" transform="translate(' + (x - w2 / 2) + ' ' + (y - h2) + ')">'
+      + '<rect width="' + w2 + '" height="' + h2 + '" rx="3" fill="' + box + '" stroke="' + N + '" stroke-width="1.8"/>'
+      + '<rect x="-2" y="-6" width="' + (w2 + 4) + '" height="9" rx="2" fill="' + box + '" stroke="' + N + '" stroke-width="1.8"/>'
+      + '<rect x="' + (w2 / 2 - 4) + '" y="-6" width="8" height="' + (h2 + 6) + '" fill="' + rib + '" stroke="' + N + '" stroke-width="1.4"/>'
+      + '<path d="M' + w2 / 2 + ',-6 C' + (w2 / 2 - 16) + ',-22 ' + (w2 / 2 - 22) + ',-4 ' + w2 / 2 + ',-6 C' + (w2 / 2 + 22) + ',-4 ' + (w2 / 2 + 16) + ',-22 ' + w2 / 2 + ',-6Z" fill="' + rib + '" stroke="' + N + '" stroke-width="1.6"/></g>';
+  }
+  // θέσεις δώρων κάτω από το δέντρο: γεμίζουν από τις άκρες προς τα μέσα, μετά δεύτερη σειρά
+  var GIFTS = [[40,478,1],[360,478,1.1],[84,478,.8],[318,478,.85],[126,478,.9],[276,478,.8],[60,446,.75],[340,446,.8],[104,450,.7],[298,450,.7],[150,478,.7],[252,478,.75]];
+  w.zwgrafiseDentro = function (el, sy) {
+    var svg = document.getElementById("dentro"); if (!svg) return;
+    svg.setAttribute("viewBox", "-4 -12 408 498");
+    var s = slots(sy).map(function (p, i) { return { k: (i * 7919) % 1000, x: p[0], y: p[1] }; });
+    s.sort(function (a, b) { return a.k - b.k; });      // σταθερή «τυχαία» σειρά, όπως σήμερα
+    var h = BASE, claimed = Math.max(0, sy - el);
+    var ng = sy ? Math.round(GIFTS.length * claimed / sy) : 0;
+    if (claimed > 0 && ng === 0) ng = 1;
+    s.slice(0, el).sort(function (a, b) { return a.y - b.y; }).forEach(function (p, j) { h += tag(p.x, p.y, j); });
+    for (var g = 0; g < ng; g++) h += gift(GIFTS[g][0], GIFTS[g][1], GIFTS[g][2], g);
+    h += TOP;
+    svg.innerHTML = h;
+  };
+})(window);
+
+</script>
+<script>
 (function(){
   "use strict";
   var API = "https://cofiscmvdagizlchrian.supabase.co/functions/v1/dora-claim?forceFunctionRegion=eu-west-2";  // εκτέλεση στο Λονδίνο, όπου η βάση
@@ -274,7 +384,8 @@ footer a{color:var(--prasino)}
   (function(){
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     var box = document.getElementById("xioni"), nifades = ["❄","❅","❆","·"];
-    for (var i = 0; i < 26; i++){
+    var NIF = (window.innerWidth < 600) ? 12 : 26;
+    for (var i = 0; i < NIF; i++){
       var n = document.createElement("i");
       n.textContent = nifades[i % nifades.length];
       n.style.left = (Math.random()*100) + "vw";
@@ -289,50 +400,46 @@ footer a{color:var(--prasino)}
   function deixeLathos(el, msg){ el.textContent = msg; el.classList.remove("krufo"); }
   function kruve(el){ el.classList.add("krufo"); }
 
-  function zwgrafiseDentro(el, sy){
-    var svg = document.getElementById("dentro"); if (!svg) return;
-    var N = "http://www.w3.org/2000/svg", h = '<rect x="136" y="205" width="28" height="30" rx="3" fill="#7a5233"/>'
-      + '<polygon points="150,18 238,100 62,100" fill="#1f7a4d"/><polygon points="150,60 258,160 42,160" fill="#25905a"/><polygon points="150,100 276,212 24,212" fill="#2ea468"/>'
-      + '<polygon points="150,2 156,16 171,16 159,25 163,40 150,31 137,40 141,25 129,16 144,16" fill="#F6DC26"/>';
-    var cols = ["#c0392b","#F6DC26","#3d85cf","#ffffff"], slots = [], i;
-    for (i = 0; i < sy; i++) {
-      var t = (i + .5) / sy, y = 52 + 150 * Math.sqrt(t), hw = (y - 20) * .5;
-      slots.push({ k: (i * 7919) % 1000, x: 150 + hw * .78 * Math.sin(i * 2.399), y: y });
-    }
-    slots.sort(function(a,b){ return a.k - b.k; });          // σταθερή «τυχαία» σειρά: όσο δεσμεύονται, λιγοστεύουν από παντού
-    slots.slice(0, el).forEach(function(p, j){
-      var rot = ((j * 37) % 31) - 15, x = p.x.toFixed(1), y = p.y.toFixed(1);
-      h += '<g transform="translate(' + x + ' ' + y + ') rotate(' + rot + ')">'
-        + '<line x1="0" y1="-12" x2="0" y2="-7" stroke="#f6f1e6" stroke-width="1"/>'
-        + '<polygon points="-6,-4 0,-9 6,-4 6,8 -6,8" fill="' + cols[j % 4] + '" stroke="rgba(0,0,0,.3)" stroke-width="1"/>'
-        + '<circle cx="0" cy="-4.2" r="1.5" fill="#2ea468"/><line x1="-3" y1="1" x2="3" y2="1" stroke="rgba(0,0,0,.25)" stroke-width="1"/><line x1="-3" y1="4" x2="3" y2="4" stroke="rgba(0,0,0,.25)" stroke-width="1"/></g>';
-    });
-    svg.innerHTML = h;
-  }
-
   function metritis(kat){
     var el = kat.reduce(function(s,c){ return s + Number(c.free); }, 0);
     var sy = kat.reduce(function(s,c){ return s + Number(c.total); }, 0);
     document.getElementById("m-eleuthera").textContent = el;
     document.getElementById("m-synolo").textContent = sy;
-    zwgrafiseDentro(el, sy);
+    var mb = document.getElementById("m-bar"); if (mb) mb.style.width = sy ? ((sy - el) / sy * 100).toFixed(1) + "%" : "0";
+    window.zwgrafiseDentro(el, sy);
   }
 
+  var ETIKETA = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><path d="M3 3h9l9 9-9 9-9-9z"/><circle cx="8" cy="8" r="1.4" fill="#1D61AC"/></svg>';
+  function analyse(c){      // «Αγόρι · Α΄–Β΄ Δημοτικού (6–7 ετών)» → φύλο, τάξεις, ηλικίες
+    var m = /^(Αγόρι|Κορίτσι)\s*·\s*(.+?)\s*\((.+?)\)\s*$/.exec(String(c.category));
+    return m ? { fylo: m[1], taxeis: m[2], ilikia: m[3] } : null;
+  }
+  function koumpiKat(c, titlos, ilikia){
+    var free = Number(c.free), b = document.createElement("button");
+    b.className = "kat"; b.type = "button";
+    if (!free) b.disabled = true;
+    b.innerHTML = ETIKETA + '<span class="keim"><span class="onoma"></span><span class="ilikia"></span></span><span class="xapi"></span>';
+    b.querySelector(".onoma").textContent = titlos;
+    b.querySelector(".ilikia").textContent = ilikia || "";
+    b.querySelector(".xapi").textContent = free ? "απομένουν " + free : "ολοκληρώθηκε";
+    b.setAttribute("aria-label", c.category + (free ? ", απομένουν " + free : ", ολοκληρώθηκε"));
+    if (free) b.addEventListener("click", function(){ anoikseForma(c); });
+    return b;
+  }
   function zwgrafise(kat){
     metritis(kat);
     plegma.innerHTML = "";
-    kat.forEach(function(c){
-      var free = Number(c.free);
-      var b = document.createElement("button");
-      b.className = "kat"; b.type = "button";
-      if (!free) b.disabled = true;
-      b.innerHTML = '<span class="onoma"></span><span class="plithos"></span>';
-      b.querySelector(".onoma").textContent = c.category;
-      b.querySelector(".plithos").textContent = free ? "απομένουν " + free : "συμπληρώθηκε ✓";
-      b.setAttribute("aria-label", c.category + (free ? ", απομένουν " + free : ", συμπληρώθηκε"));
-      if (free) b.addEventListener("click", function(){ anoikseForma(c); });
-      plegma.appendChild(b);
+    var omades = { "Αγόρι": [], "Κορίτσι": [], "άλλα": [] };
+    kat.forEach(function(c){ var a = analyse(c); (a ? omades[a.fylo] : omades["άλλα"]).push({ c: c, a: a }); });
+    var grid = document.createElement("div"); grid.className = "omades";
+    [["Αγόρι", "Αγόρια"], ["Κορίτσι", "Κορίτσια"], ["άλλα", "Άλλες ετικέτες"]].forEach(function(g){
+      var l = omades[g[0]]; if (!l.length) return;
+      var col = document.createElement("div"); col.className = "omada";
+      col.innerHTML = '<h3></h3><div class="plegma-s"></div>'; col.querySelector("h3").textContent = g[1];
+      l.forEach(function(x){ col.querySelector(".plegma-s").appendChild(x.a ? koumpiKat(x.c, x.a.taxeis, x.a.ilikia) : koumpiKat(x.c, x.c.category, "")); });
+      grid.appendChild(col);
     });
+    plegma.appendChild(grid);
   }
 
   function anoikseForma(c){
@@ -426,6 +533,16 @@ footer a{color:var(--prasino)}
       deixeLathos(lathos, "Δεν υπήρξε σύνδεση. Δοκίμασε ξανά.");
     });
   });
+
+  (function(){
+    var kb = document.getElementById("koumpi-kratisis"), ps = document.getElementById("kategories");
+    if (!kb || !ps) return;
+    kb.addEventListener("click", function(){ ps.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function(en){ kb.classList.toggle("fainetai", !en[0].isIntersecting && en[0].boundingClientRect.top > 0); },
+        { threshold: 0 }).observe(plegma);
+    } else kb.classList.add("fainetai");
+  })();
 
   fortwse().catch(function(){
     var f = document.getElementById("fortonei"); if (f) f.remove();
