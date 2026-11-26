@@ -125,6 +125,21 @@
     root.appendChild(nav);
   }
 
+  /* Ξαναδημοσιεύτηκε η φόρμα όσο ο γονέας τη συμπλήρωνε (27/11, σημείο ii): οι απαντήσεις ΔΕΝ χάνονται (το «times» μένει),
+     παίρνουμε τον νέο ορισμό, λέμε καθαρά τι έγινε και ο γονέας ξαναπατά «Υποβολή» — τώρα με τη νέα έκδοση. */
+  var MINIMA_NEA = 'Η φόρμα ενημερώθηκε. Οι απαντήσεις σας διατηρήθηκαν — ελέγξτε τες και πατήστε ξανά «Υποβολή».';
+  function neaEkdosi(j) {
+    function telos() { sel = F.selides.length - 1; zografise(MINIMA_NEA); window.scrollTo(0, 0); }
+    fetch(API + '?f=' + encodeURIComponent(F.slug) + '&orismos=1&' + PERIOXI).then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.anoikti === false) return kleisto();
+        if (d && d.orismos && d.orismos.selides && d.ekdosi != null) { F.selides = d.orismos.selides; F.ekdosi = d.ekdosi; }
+        else if (j.ekdosi != null) F.ekdosi = j.ekdosi;
+        telos();
+      })
+      .catch(function () { if (j.ekdosi != null) F.ekdosi = j.ekdosi; telos(); });
+  }
+
   function steile(b) {
     if (stelnei) return;
     stelnei = true; b.disabled = true; b.textContent = 'Αποστολή…';
@@ -132,7 +147,8 @@
     F.selides.forEach(function (s) { s.pedia.forEach(function (p) {
       var v = String(times[p.key] == null ? '' : times[p.key]).trim(); if (v) ap[p.key] = v; }); });
     fetch(API + '?' + PERIOXI, { method: 'POST', headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ forma: F.slug, apantiseis: ap, istoselida: hp ? hp.value : '' }) })
+      body: JSON.stringify(F.ekdosi != null ? { forma: F.slug, ekdosi: F.ekdosi, apantiseis: ap, istoselida: hp ? hp.value : '' }
+        : { forma: F.slug, apantiseis: ap, istoselida: hp ? hp.value : '' }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { s: r.status, j: j }; }); })
       .then(function (x) {
         stelnei = false;
@@ -142,6 +158,7 @@
           root.appendChild(el('div', { cls: 'f-efxaristo', role: 'status', text: F.efxaristo || 'Σας ευχαριστούμε. Η υποβολή σας καταχωρίστηκε.' }));
           window.scrollTo(0, 0);
         } else if (x.j && x.j.kleisti) kleisto();
+        else if (x.j && x.j.nea_ekdosi) neaEkdosi(x.j);
         else zografise((x.j && x.j.error) || 'Η υποβολή δεν ολοκληρώθηκε. Δοκιμάστε ξανά σε λίγο.');
       })
       .catch(function () { stelnei = false; zografise('Δεν υπάρχει σύνδεση. Τα στοιχεία σας δεν χάθηκαν· δοκιμάστε ξανά.'); });
