@@ -150,20 +150,24 @@ header::before{overflow:hidden}
 .panel{background:radial-gradient(120% 80% at 50% 40%,#2A74C4,#1D61AC 60%,#174F8E);border:0;color:#fff;margin-top:26px;padding:18px 16px 12px;position:relative}
 .panel .metritis{justify-content:center;gap:10px;flex-wrap:nowrap;white-space:nowrap}
 .panel .arith{color:var(--kitrino);font-size:3rem;font-family:"Comfortaa","Commissioner",sans-serif}
-.panel .apo{font-size:1.4rem;font-weight:800;opacity:.92}
-.panel .lex{font-size:1rem;opacity:.95;line-height:1.2;white-space:nowrap}
-@media(max-width:420px){.panel .arith{font-size:2.3rem}.panel .apo{font-size:1.1rem}.panel .lex{font-size:.85rem}.panel .metritis{gap:6px}}
+.panel .apo{font-size:1.05rem;font-weight:600;opacity:.95;white-space:nowrap}
+.panel .lex{font-size:1.05rem;opacity:.95;line-height:1.2;white-space:nowrap}
+@media(max-width:420px){.panel .arith{font-size:2.3rem}.panel .apo{font-size:.8rem}.panel .lex{font-size:.8rem}.panel .metritis{gap:6px}}
 .panel .bar{background:rgba(255,255,255,.18);border:0;height:8px;margin:10px auto 0;max-width:340px}
+.bar-keim{text-align:center;font-size:.92rem;font-weight:600;opacity:.95;margin-top:8px}
 .panel .bar i{background:var(--kitrino)}
 .panel svg#dentro{max-width:340px}
 .vimata{display:flex;gap:8px;align-items:stretch;margin:14px 0 4px;padding:0;list-style:none}
-.vimata li{flex:1;text-align:center;background:#eef4fb;border:1px solid var(--grammi);border-radius:12px;padding:12px 6px 10px;font-weight:700;font-size:.88rem;line-height:1.25;color:var(--vathy-mple)}
+.vimata li{flex:1;text-align:center;position:relative;padding:4px 10px 4px;font-weight:700;font-size:.9rem;line-height:1.25;color:var(--vathy-mple)}
+.vimata li+li::before{content:"";position:absolute;left:-7px;top:11px;width:10px;height:10px;border-top:2.5px solid var(--prasino);border-right:2.5px solid var(--prasino);transform:rotate(45deg)}
+.vimata{gap:14px}
 .vimata li svg{display:block;margin:0 auto 6px}
 details.pws{margin-top:12px;border-top:1px solid var(--grammi);padding-top:10px}
 details.pws summary,details.idiot summary{cursor:pointer;font-weight:700;color:var(--prasino)}
 details.pws p{margin:.7em 0 0}
-.omades{display:grid;grid-template-columns:1fr;gap:6px 18px}
-@media(min-width:640px){.omades{grid-template-columns:1fr 1fr}}
+#plegma{display:block!important}.omades{display:block;width:100%}.omada{width:100%}
+.omada .plegma-s{grid-template-columns:1fr}
+@media(min-width:640px){.omada .plegma-s{grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr}button.kat{flex-direction:column!important;text-align:center;justify-content:center;gap:8px!important;padding:16px 10px!important}button.kat .keim{flex:none}button.kat .onoma{white-space:nowrap}}
 .omada h3{margin:14px 0 8px;font-size:1.05rem;font-weight:800;color:var(--vathy-mple);display:flex;align-items:center;gap:8px}
 .omada h3::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--kitrino);box-shadow:0 0 0 2px var(--prasino)}
 .omada .plegma-s{display:grid;gap:10px}
@@ -178,7 +182,7 @@ button.kat:hover:not([disabled]),button.kat:focus-visible{transform:translateY(-
 button.kat[disabled]{cursor:not-allowed;background:#eef2f8;opacity:.8}
 button.kat[disabled] .xapi{background:#d5dbe3;color:#5b6675}
 button.kat[disabled] .onoma{color:var(--sbhsto)}
-.imerominia{display:inline-block;background:var(--kitrino);color:#0E2F57;font-weight:800;border-radius:10px;padding:8px 14px;margin:2px 0 6px}
+.imerominia{display:inline-block;color:#0E2F57;font-weight:800;font-size:1.12rem;margin:2px 0 6px}
 #koumpi-kratisis{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:5;border:0;border-radius:14px;padding:15px;font:800 1.05rem "Commissioner",sans-serif;background:var(--kitrino);color:#0E2F57;box-shadow:0 8px 24px rgba(14,47,87,.35);cursor:pointer}
 @media(max-width:719px){#koumpi-kratisis.fainetai{display:block}body{padding-bottom:76px}}
 .doro-kef{filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
@@ -203,16 +207,6 @@ button.kat[disabled] .onoma{color:var(--sbhsto)}
 
 <div class="wrap">
 
-  <div class="karta panel">
-    <div class="metritis">
-      <span class="arith" id="m-eleuthera">·</span>
-      <span class="apo">/ <span id="m-synolo">·</span></span>
-      <span class="lex">ετικέτες περιμένουν</span>
-    </div>
-    <svg id="dentro" viewBox="-4 -12 408 498" role="img" aria-label="Χριστουγεννιάτικο δέντρο με τις ετικέτες που περιμένουν" style="display:block;width:100%;max-width:340px;margin:12px auto 0"></svg>
-    <div class="bar" aria-hidden="true"><i id="m-bar"></i></div>
-  </div>
-
   <div class="karta">
     <p style="margin-top:0">Φέτος μαζεύουμε χριστουγεννιάτικα δώρα για <strong>άπορα παιδιά δημοτικών σχολείων της περιοχής μας</strong>. Συμμετέχεις κι εσύ;</p>
     <ol class="vimata">
@@ -220,10 +214,20 @@ button.kat[disabled] .onoma{color:var(--sbhsto)}
       <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12M12 9S9.5 4.5 7 6s1 3 5 3zM12 9s2.5-4.5 5-3-1 3-5 3z"/></svg>Αγόρασε δώρο</li>
       <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D61AC" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-8 9 8v10H3z"/><path d="M9 21v-6h6v6"/></svg>Φέρ’ το στην Εστία 76ου ΣΠΣ</li>
     </ol>
-    <details class="pws"><summary>Πώς δουλεύει</summary>
-      <p>Καλούμε <strong>όλους</strong> — γονείς, βαθμοφόρους, παλαιούς προσκόπους και φίλους του Συστήματος — να συμμετάσχουν σε αυτή την όμορφη προσπάθεια. Είναι <strong>μια καλή πράξη</strong> γι’ αυτά τα Χριστούγεννα — και χωράει ο καθένας. Τα δώρα τα παραδίδουμε στα σχολεία και εκείνα τα δίνουν στα παιδιά.</p>
+          <p>Καλούμε <strong>όλους</strong> — γονείς, βαθμοφόρους, παλαιούς προσκόπους και φίλους του Συστήματος — να συμμετάσχουν σε αυτή την όμορφη προσπάθεια. Είναι <strong>μια καλή πράξη</strong> γι’ αυτά τα Χριστούγεννα — και χωράει ο καθένας. Τα δώρα τα παραδίδουμε στα σχολεία και εκείνα τα δίνουν στα παιδιά.</p>
       <p>Κάθε ετικέτα είναι <strong>ένα παιδί</strong> και γράφει μόνο <strong>τάξη και φύλο</strong> — τίποτα που να ταυτοποιεί κάποιον. Δεν χρειάζεται να ξέρουμε ποιο ακριβώς παιδί θα πάρει το δώρο· αρκεί το δώρο να είναι κατάλληλο γι’ αυτό. Δεσμεύεις μια ετικέτα, φέρνεις το δώρο και η ετικέτα βγαίνει από το δέντρο.</p>
-    </details>
+    
+  </div>
+
+  <div class="karta panel">
+    <div class="metritis">
+      <span class="arith" id="m-eleuthera">·</span>
+      <span class="apo">από τις <span id="m-synolo">·</span></span>
+      <span class="lex">ετικέτες περιμένουν</span>
+    </div>
+    <svg id="dentro" viewBox="-4 -12 408 498" role="img" aria-label="Χριστουγεννιάτικο δέντρο με τις ετικέτες που περιμένουν" style="display:block;width:100%;max-width:340px;margin:12px auto 0"></svg>
+    <div class="bar" aria-hidden="true"><i id="m-bar"></i></div>
+    <div class="bar-keim" id="m-keim"></div>
   </div>
 
   <h2 id="kategories">
@@ -405,7 +409,8 @@ button.kat[disabled] .onoma{color:var(--sbhsto)}
     var sy = kat.reduce(function(s,c){ return s + Number(c.total); }, 0);
     document.getElementById("m-eleuthera").textContent = el;
     document.getElementById("m-synolo").textContent = sy;
-    var mb = document.getElementById("m-bar"); if (mb) mb.style.width = sy ? ((sy - el) / sy * 100).toFixed(1) + "%" : "0";
+    var mb = document.getElementById("m-bar"); var mk = document.getElementById("m-keim"); if (mk) mk.textContent = (sy - el) + " από τις " + sy + " ετικέτες δεσμεύτηκαν";
+    if (mb) mb.style.width = sy ? ((sy - el) / sy * 100).toFixed(1) + "%" : "0";
     window.zwgrafiseDentro(el, sy);
   }
 
