@@ -118,8 +118,7 @@
       nav.appendChild(piso);
     }
     var b = el('button', { type: 'button', cls: 'f-epomeno', text: sel === N - 1 ? 'Υποβολή' : 'Επόμενο' });
-    if (enim && typeof KEIMENA[String(F.enimerosi)] !== 'string') b.disabled = true;   /* όχι «Υποβολή» πριν φανεί το κείμενο ενημέρωσης */
-    if (enim) enim.btn = b;
+    if (v2() && F.enimerosi && !katharaKeimena()) b.disabled = true;   /* όχι «Υποβολή» χωρίς τα παγωμένα κείμενα */
     b.addEventListener('click', function () {
       if (!elegxosSelidas()) return;
       if (sel < N - 1) { sel++; zografise(); window.scrollTo(0, 0); } else steile(b);
@@ -136,39 +135,36 @@
     fetch(API + '?f=' + encodeURIComponent(F.slug) + '&orismos=1&' + PERIOXI).then(function (r) { return r.json(); })
       .then(function (d) {
         if (d && d.anoikti === false) return kleisto();
-        if (d && d.orismos && d.orismos.selides && d.ekdosi != null) { F.selides = d.orismos.selides; F.ekdosi = d.ekdosi; }
+        if (d && d.orismos && d.orismos.selides && d.ekdosi != null) { F.selides = d.orismos.selides; F.ekdosi = d.ekdosi; F.enimerosi = d.orismos.enimerosi; F.oroi = d.orismos.oroi; F.keimena = d.keimena; }
         else if (j.ekdosi != null) F.ekdosi = j.ekdosi;
         telos();
       })
       .catch(function () { if (j.ekdosi != null) F.ekdosi = j.ekdosi; telos(); });
   }
 
-  /* (ε) Φόρμες v2: το κείμενο ενημέρωσης είναι ΠΑΓΩΜΕΝΟ αρχείο (keimena/ENIM-<φόρμα>/vX.Y.md), γραμμένο από το CDPS.
-     Ο ορισμός κρατά μόνο τον κωδικό· ελεύθερο κείμενο από τον ορισμό δεν εμφανίζεται ποτέ. Χωρίς κείμενο, δεν υποβάλλεται. */
-  var KEIMENA = {};
+  /* (ε) + CDPS-76/6/16: Φόρμες v2 — δείχνουμε ΜΟΝΟ το παγωμένο κείμενο που ήρθε μέσα στο πακέτο του ορισμού (F.keimena),
+     με sha256 που ξαναϋπολόγισε η forms-define. Ο ορισμός κρατά μόνο κωδικούς (enimerosi, oroi)· ελεύθερο κείμενο ή κείμενο
+     με άλλον κωδικό δεν εμφανίζεται ποτέ. Χωρίς τα κείμενα που απαιτεί ο ορισμός, δεν υποβάλλεται. */
   function v2() { return F.ekdosi != null || F.orismos === 2; }
+  function keimenoToy(kod) {
+    var k = F.keimena && F.keimena[kod === F.oroi ? 'oroi' : 'enimerosi'];
+    return k && k.kodikos === kod && typeof k.keimeno === 'string' && k.keimeno ? k.keimeno : null;
+  }
+  function katharaKeimena() { return !!F.enimerosi && !!keimenoToy(F.enimerosi) && (!F.oroi || !!keimenoToy(F.oroi)); }
   function fortoseKeimeno(box) {
-    var kod = String(F.enimerosi), m = /^ENIM-([a-z0-9-]{3,60})\/(v\d+\.\d+)$/.exec(kod);
-    function zwgrafise() {
-      var t = KEIMENA[kod];
-      box.textContent = '';
-      if (typeof t !== 'string') {
-        box.appendChild(el('div', { cls: 'f-sfalma', role: 'alert', text: 'Δεν φορτώθηκε το κείμενο ενημέρωσης. Ανανεώστε τη σελίδα και δοκιμάστε ξανά.' }));
-        return;
-      }
-      t.split(/\n{2,}/).forEach(function (blk) {
+    box.textContent = '';
+    if (!katharaKeimena()) {
+      box.appendChild(el('div', { cls: 'f-sfalma', role: 'alert', text: 'Δεν φορτώθηκε το κείμενο ενημέρωσης. Ανανεώστε τη σελίδα και δοκιμάστε ξανά.' }));
+      return;
+    }
+    [F.enimerosi, F.oroi].forEach(function (kod) {
+      if (!kod) return;
+      keimenoToy(kod).split(/\n{2,}/).forEach(function (blk) {
         blk = blk.replace(/^\s+|\s+$/g, ''); if (!blk) return;
         if (/^#/.test(blk)) box.appendChild(el('h3', { text: blk.replace(/^#+\s*/, '') }));
         else box.appendChild(el('p', { text: blk.replace(/^_(.*)_$/s, '$1') }));
       });
-      if (box.btn) box.btn.disabled = false;
-    }
-    if (KEIMENA[kod] !== undefined) return zwgrafise();
-    if (!m) { KEIMENA[kod] = false; return zwgrafise(); }
-    fetch('/keimena/ENIM-' + m[1] + '/' + m[2] + '.md', { redirect: 'error' })
-      .then(function (r) { if (!r.ok) throw 0; return r.text(); })
-      .then(function (t) { KEIMENA[kod] = t.length && t.length <= 65536 ? t : false; zwgrafise(); })
-      .catch(function () { KEIMENA[kod] = false; zwgrafise(); });
+    });
   }
 
   function steile(b) {

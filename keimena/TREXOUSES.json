@@ -1,0 +1,15 @@
+{
+  "_simeiosi": "Τρέχουσες εκδόσεις παγωμένων κειμένων (CDPS-76/6/16). Γράφει το CDPS· το ανεβάζει αυτούσιο το «e76 · Φόρμες & πληρωμές» στο formes/keimena/TREXOUSES.json. Καμία τιμή εδώ δεν είναι προσωπικό δεδομένο.",
+  "_ekdosi_arxeiou": "2026-11-27",
+  "kodikoi": {
+    "OROI-PLIROMIS": { "trexousa": "v2.0", "sha256": "9eeae2fda124f4da38ed613f4e78c5ed9732766c64419e19e80cec62bf420ac0", "energo": true },
+    "ENIM-dora2026": { "trexousa": "v2.0", "sha256": "8260e3922c19a946b9711b22b661f71dd387d3fbbf16820d216285999d266a73", "energo": true },
+    "ENIM-anatrofodotisi-diimerou-agelis-2026": { "trexousa": "v1.0", "sha256": "3962587fc0c0d94f1dd33e78c16dfdbd67b823233f4a86b212bed02aa30db42a", "energo": true },
+    "SYN-IATRIKA": { "trexousa": "v2.0", "sha256": "31cba97cdf68a4923c87bab4f9ad879bfb22edd6300577c9920a8238b62b1e95", "energo": false }
+  },
+  "palies": {
+    "OROI-PLIROMIS/v1.0": "1c788f3dde0f1028de4f2424bfb85f7ca0c7709514b078aa92c22ef74879437b",
+    "ENIM-dora2026/v1.0": "4ceb811e7abc83f906134b4219014e344c05d1ff87cf137d7052e3ca79f12a96",
+    "SYN-IATRIKA/v1.0": "58d8a9c0f5870028e1e6df5c24f140ef0144e9a6725ef5484ab7108666c3432d"
+  }
+}
