@@ -135,8 +135,8 @@ footer a{color:var(--prasino)}
 
   <div class="karta">
     <p style="margin-top:0">Φέτος μαζεύουμε χριστουγεννιάτικα δώρα για παιδιά <strong>δημοτικών σχολείων της περιοχής μας</strong>. Τα παραδίδουμε στα σχολεία και εκείνα τα δίνουν στα παιδιά.</p>
-    <p>Καλούμε <strong>όλους</strong> — γονείς, βαθμοφόρους, παλαιούς προσκόπους και φίλους του Συστήματος — να συμμετάσχουν σε αυτή την όμορφη προσπάθεια. Είναι <strong>η καλή μας πράξη</strong> γι’ αυτά τα Χριστούγεννα — και χωράει ο καθένας.</p>
-    <p style="margin-bottom:0">Κάθε ετικέτα πιο κάτω είναι <strong>ένα παιδί</strong>. Γράφει μόνο φύλο και ηλικία — τίποτα που να ταυτοποιεί κάποιον. Δεσμεύεις μια ετικέτα, φέρνεις το δώρο, η ετικέτα φεύγει από το δέντρο.</p>
+    <p>Καλούμε <strong>όλους</strong> — γονείς, βαθμοφόρους, παλαιούς προσκόπους και φίλους του Συστήματος — να συμμετάσχουν σε αυτή την όμορφη προσπάθεια. Είναι <strong>μια καλή πράξη</strong> γι’ αυτά τα Χριστούγεννα — και χωράει ο καθένας. Συμμετέχεις κι εσύ;</p>
+    <p style="margin-bottom:0">Κάθε ετικέτα πιο κάτω είναι <strong>ένα παιδί</strong> και γράφει μόνο <strong>τάξη και φύλο</strong> — τίποτα που να ταυτοποιεί κάποιον. Δεν χρειάζεται να ξέρουμε ποιο ακριβώς παιδί θα πάρει το δώρο· αρκεί το δώρο να είναι κατάλληλο γι’ αυτό. Δεσμεύεις μια ετικέτα, φέρνεις το δώρο και η ετικέτα βγαίνει από το δέντρο.</p>
   </div>
 
   <div class="karta">
@@ -150,7 +150,7 @@ footer a{color:var(--prasino)}
         <span>ετικέτες περιμένουν ακόμη — από <span id="m-synolo">·</span></span>
       </div>
     </div>
-    <div class="bar"><i id="m-bar"></i></div>
+    <svg id="dentro" viewBox="0 0 300 250" role="img" aria-label="Χριστουγεννιάτικο δέντρο με τις ετικέτες που περιμένουν" style="display:block;width:100%;max-width:300px;margin:14px auto 0"></svg>
   </div>
 
   <h2>
@@ -272,12 +272,30 @@ footer a{color:var(--prasino)}
   function deixeLathos(el, msg){ el.textContent = msg; el.classList.remove("krufo"); }
   function kruve(el){ el.classList.add("krufo"); }
 
+  function zwgrafiseDentro(el, sy){
+    var svg = document.getElementById("dentro"); if (!svg) return;
+    var N = "http://www.w3.org/2000/svg", h = '<rect x="136" y="205" width="28" height="30" rx="3" fill="#7a5233"/>'
+      + '<polygon points="150,18 238,100 62,100" fill="#1f7a4d"/><polygon points="150,60 258,160 42,160" fill="#25905a"/><polygon points="150,100 276,212 24,212" fill="#2ea468"/>'
+      + '<polygon points="150,2 156,16 171,16 159,25 163,40 150,31 137,40 141,25 129,16 144,16" fill="#F6DC26"/>';
+    var cols = ["#c0392b","#F6DC26","#3d85cf","#ffffff"], slots = [], i;
+    for (i = 0; i < sy; i++) {
+      var t = (i + .5) / sy, y = 52 + 150 * Math.sqrt(t), hw = (y - 20) * .5;
+      slots.push({ k: (i * 7919) % 1000, x: 150 + hw * .78 * Math.sin(i * 2.399), y: y });
+    }
+    slots.sort(function(a,b){ return a.k - b.k; });          // σταθερή «τυχαία» σειρά: όσο δεσμεύονται, λιγοστεύουν από παντού
+    slots.slice(0, el).forEach(function(p, j){
+      h += '<line x1="' + p.x.toFixed(1) + '" y1="' + (p.y - 9).toFixed(1) + '" x2="' + p.x.toFixed(1) + '" y2="' + (p.y - 4).toFixed(1) + '" stroke="#f6f1e6" stroke-width="1"/>'
+        + '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="6" fill="' + cols[j % 4] + '" stroke="rgba(0,0,0,.25)" stroke-width="1"/>';
+    });
+    svg.innerHTML = h;
+  }
+
   function metritis(kat){
     var el = kat.reduce(function(s,c){ return s + Number(c.free); }, 0);
     var sy = kat.reduce(function(s,c){ return s + Number(c.total); }, 0);
     document.getElementById("m-eleuthera").textContent = el;
     document.getElementById("m-synolo").textContent = sy;
-    document.getElementById("m-bar").style.width = sy ? ((sy-el)/sy*100).toFixed(1)+"%" : "0";
+    zwgrafiseDentro(el, sy);
   }
 
   function zwgrafise(kat){
