@@ -93,7 +93,7 @@
 
   function zografise(minima) {
     root.innerHTML = '';
-    var S = F.selides[sel], N = F.selides.length;
+    var S = F.selides[sel], N = F.selides.length, enim = null;
     if (N > 1) {
       root.appendChild(el('div', { cls: 'f-mpara', role: 'progressbar', 'aria-valuemin': 1, 'aria-valuemax': N,
         'aria-valuenow': sel + 1 }, [el('span', { style: 'width:' + Math.round(100 * (sel + 1) / N) + '%' })]));
@@ -103,7 +103,8 @@
     root.appendChild(el('h2', { text: S.titlos }));
     S.pedia.forEach(function (p) { root.appendChild(pedio(p)); });
     if (sel === N - 1) {
-      if (F.enimerosi) root.appendChild(el('p', { cls: 'f-enimerosi', text: F.enimerosi }));
+      if (F.enimerosi && !v2()) root.appendChild(el('p', { cls: 'f-enimerosi', text: F.enimerosi }));   /* παλιές (v1) φόρμες: όπως ήταν */
+      if (F.enimerosi && v2()) { enim = el('div', { cls: 'f-enimerosi' }); root.appendChild(enim); fortoseKeimeno(enim); }
       /* πεδίο-παγίδα: κρυφό για ανθρώπους */
       var hp = el('div', { cls: 'f-ist', 'aria-hidden': 'true' },
         [el('label', { for: 'istoselida', text: 'Ιστοσελίδα' }), el('input', { id: 'istoselida', type: 'text', tabindex: '-1', autocomplete: 'off' })]);
@@ -117,6 +118,8 @@
       nav.appendChild(piso);
     }
     var b = el('button', { type: 'button', cls: 'f-epomeno', text: sel === N - 1 ? 'Υποβολή' : 'Επόμενο' });
+    if (enim && typeof KEIMENA[String(F.enimerosi)] !== 'string') b.disabled = true;   /* όχι «Υποβολή» πριν φανεί το κείμενο ενημέρωσης */
+    if (enim) enim.btn = b;
     b.addEventListener('click', function () {
       if (!elegxosSelidas()) return;
       if (sel < N - 1) { sel++; zografise(); window.scrollTo(0, 0); } else steile(b);
@@ -138,6 +141,34 @@
         telos();
       })
       .catch(function () { if (j.ekdosi != null) F.ekdosi = j.ekdosi; telos(); });
+  }
+
+  /* (ε) Φόρμες v2: το κείμενο ενημέρωσης είναι ΠΑΓΩΜΕΝΟ αρχείο (keimena/ENIM-<φόρμα>/vX.Y.md), γραμμένο από το CDPS.
+     Ο ορισμός κρατά μόνο τον κωδικό· ελεύθερο κείμενο από τον ορισμό δεν εμφανίζεται ποτέ. Χωρίς κείμενο, δεν υποβάλλεται. */
+  var KEIMENA = {};
+  function v2() { return F.ekdosi != null || F.orismos === 2; }
+  function fortoseKeimeno(box) {
+    var kod = String(F.enimerosi), m = /^ENIM-([a-z0-9-]{3,60})\/(v\d+\.\d+)$/.exec(kod);
+    function zwgrafise() {
+      var t = KEIMENA[kod];
+      box.textContent = '';
+      if (typeof t !== 'string') {
+        box.appendChild(el('div', { cls: 'f-sfalma', role: 'alert', text: 'Δεν φορτώθηκε το κείμενο ενημέρωσης. Ανανεώστε τη σελίδα και δοκιμάστε ξανά.' }));
+        return;
+      }
+      t.split(/\n{2,}/).forEach(function (blk) {
+        blk = blk.replace(/^\s+|\s+$/g, ''); if (!blk) return;
+        if (/^#/.test(blk)) box.appendChild(el('h3', { text: blk.replace(/^#+\s*/, '') }));
+        else box.appendChild(el('p', { text: blk.replace(/^_(.*)_$/s, '$1') }));
+      });
+      if (box.btn) box.btn.disabled = false;
+    }
+    if (KEIMENA[kod] !== undefined) return zwgrafise();
+    if (!m) { KEIMENA[kod] = false; return zwgrafise(); }
+    fetch('/keimena/ENIM-' + m[1] + '/' + m[2] + '.md', { redirect: 'error' })
+      .then(function (r) { if (!r.ok) throw 0; return r.text(); })
+      .then(function (t) { KEIMENA[kod] = t.length && t.length <= 65536 ? t : false; zwgrafise(); })
+      .catch(function () { KEIMENA[kod] = false; zwgrafise(); });
   }
 
   function steile(b) {
