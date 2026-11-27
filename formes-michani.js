@@ -10,6 +10,10 @@
   var root = document.getElementById('forma');
   if (!F || !root) return;
   var sel = 0, times = {}, stelnei = false;
+  /* CDPS-76/6/20: ο σέρβερ δίνει σε κάθε GET μια υπογεγραμμένη «ώρα ανοίγματος» (ora). Την κρατάμε στη μνήμη και την
+     στέλνουμε πίσω στην υποβολή. Δεν εμφανίζεται πουθενά, δεν αποθηκεύεται. Χωρίς ora (π.χ. χωρίς δίκτυο) δεν στέλνουμε τίποτα. */
+  var ORA = null;
+  function kratiseOra(j) { if (j && typeof j.ora === 'string' && j.ora) ORA = j.ora; }
 
   function el(tag, attrs, kids) {
     var e = document.createElement(tag), k;
@@ -134,6 +138,7 @@
     function telos() { sel = F.selides.length - 1; zografise(MINIMA_NEA); window.scrollTo(0, 0); }
     fetch(API + '?f=' + encodeURIComponent(F.slug) + '&orismos=1&' + PERIOXI).then(function (r) { return r.json(); })
       .then(function (d) {
+        kratiseOra(d);
         if (d && d.anoikti === false) return kleisto();
         if (d && d.orismos && d.orismos.selides && d.ekdosi != null) { F.selides = d.orismos.selides; F.ekdosi = d.ekdosi; F.enimerosi = d.orismos.enimerosi; F.oroi = d.orismos.oroi; F.keimena = d.keimena; }
         else if (j.ekdosi != null) F.ekdosi = j.ekdosi;
@@ -174,8 +179,8 @@
     F.selides.forEach(function (s) { s.pedia.forEach(function (p) {
       var v = String(times[p.key] == null ? '' : times[p.key]).trim(); if (v) ap[p.key] = v; }); });
     fetch(API + '?' + PERIOXI, { method: 'POST', headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(F.ekdosi != null ? { forma: F.slug, ekdosi: F.ekdosi, apantiseis: ap, istoselida: hp ? hp.value : '' }
-        : { forma: F.slug, apantiseis: ap, istoselida: hp ? hp.value : '' }) })
+      body: JSON.stringify(Object.assign(F.ekdosi != null ? { forma: F.slug, ekdosi: F.ekdosi, apantiseis: ap, istoselida: hp ? hp.value : '' }
+        : { forma: F.slug, apantiseis: ap, istoselida: hp ? hp.value : '' }, ORA ? { ora: ORA } : {})) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { s: r.status, j: j }; }); })
       .then(function (x) {
         stelnei = false;
@@ -194,5 +199,5 @@
   zografise();
   /* Έκλεισε στο μεταξύ; Ρωτάμε τον σέρβερ (δεν στέλνεται κανένα στοιχείο). */
   fetch(API + '?f=' + encodeURIComponent(F.slug) + '&' + PERIOXI).then(function (r) { return r.json(); })
-    .then(function (j) { if (j && j.anoikti === false) kleisto(); }).catch(function () {});
+    .then(function (j) { kratiseOra(j); if (j && j.anoikti === false) kleisto(); }).catch(function () {});
 })();
